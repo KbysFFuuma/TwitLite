@@ -1,0 +1,367 @@
+body {
+  margin: 0;
+  background-color: #f8f4e6
+  /* background-color: #fff; */
+}
+
+
+.container {
+  max-width:1050px;
+  /* width: 75%; */
+  margin: 0 auto;
+  /* margin-top: 50px; */
+  /* display: flex; */
+}
+
+/* header */
+
+/* 登録一覧 */
+
+
+
+/* aside */
+aside {
+  width: 300px;
+}
+
+/* profile */
+
+.profile {
+  height: 250px;
+  /* height: auto; */
+  background-color: #fff;
+
+  position: relative;
+}
+
+.profile #user_name {
+  font-size: 14px;
+}
+
+.profile a {
+  text-decoration: none;
+}
+
+
+
+.profile #pf-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top:20px;
+  left:20px;
+}
+
+.profile .this_user {
+  float: right;
+  position: absolute;
+  left:150px;
+  top:50px;
+}
+
+.profile #user_name {
+  margin: 0 auto;
+  /* position: absolute; */
+  /* left:100px; */
+}
+
+.profile .user_info {
+  /* height: auto; */
+  /* width: 300px; */
+  background-color: #fff;
+  position: absolute;
+  margin: auto 10px;
+  left:30px;
+  top:150px;
+}
+
+.profile .user_info .rel{
+  font-size: 14px;
+  padding-left: 0;
+  display:inline-block;
+  list-style:none;
+  margin-right:  20px;
+}
+
+
+
+
+/* main-content */
+
+/* タブメニュー */
+.tab-menu {
+  /* background-color: #000; */
+  color: #fff;
+  width: 650px;
+  margin-left: 50px;
+
+}
+.tab-menu ul {
+  font-size: 0;
+  padding-left: 0;
+  margin: 0;
+  text-align: center;
+
+}
+
+.tab-menu li {
+  font-size: 14px;
+  display: inline-block;
+  width: 20%;
+  vertical-align: middle;
+  /* margin-bottom: 5px; */
+  /* margin: 0; */
+  /* text-align: center; */
+}
+
+.tab-menu a{
+  display: inline-block;
+  position: relative;
+  /* color:#fff; */
+  text-decoration: none;
+  width:100%;
+}
+.tab-select a {
+  border-bottom: solid 2px #0000ff;
+  bottom:0px;
+  content: "";
+
+}
+
+.tab-not-select a:before {
+  border-bottom: solid 2px #ff0000;
+  bottom:-1px;
+  content: "";
+  left:0;
+  display: inline-block;
+  /* vertical-align: middle; */
+  position: absolute;
+  transform: scale(0, 1);
+  transition: 0.4s;
+  width:100%;
+}
+
+.tab-not-select a:hover:before {
+  transform: scale(1);
+}
+
+/* userAtherPage */
+.userAtherPage {
+  width:650px;
+  margin-left: 50px;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.userAtherPage li {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  list-style:none;
+}
+
+/* tweetFrom */
+.tweetFrom {
+  width:650px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  /* position: absolute; */
+  /* top:300px; */
+}
+
+.tweetFrom .tweetArea {
+  background-color: #fff;
+  resize: none;
+  width: 100%;
+  height: 80px;
+}
+
+.tweetForm .postBtn {
+  /* width: 650px; */
+  text-align: right;
+  width: 100%;
+  /* background: rgba(0,0,0,0); */
+}
+
+/* article */
+article {
+  width:650px;
+  margin-left: 50px;
+  background-color: #fff;
+}
+/* timeline */
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 0;
+  border-width: 1px 0 0 0;
+}
+
+hr:first-child {
+  margin-top: 0;
+}
+
+/* コンテンツ */
+
+/* タイムライン */
+.contents {
+  background-color: #fff;
+  /* border: solid #808000; */
+  margin-top: 10px;
+  margin-left: 80px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.contents #userMiniIcon {
+  left:-65px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.user_block {
+  display: inline-block;
+}
+
+.user_block a {
+  text-decoration: none;
+}
+
+.tweet_action {
+  list-style:none;
+  padding-left: 0;
+}
+
+.tweet_action li {
+  display: inline-block;
+}
+
+.tweet_action .favorite-btn {
+  height: 25px;
+  width: 70px;
+  padding: 0;
+  background-image: url("/storage/img/parts/favorite.png") no-repeat;
+  background-size: 25px 25px;
+}
+
+.tweet_action .delete-btn {
+  height: 25px;
+  width: 70px;
+  padding: 0;
+  background-image: url("/storage/img/parts/delete.png") no-repeat;
+  background-size: 25px 25px;
+}
+
+.tweet_action .action {
+  display:inline-block;
+  margin-right: 80px;
+}
+
+.tweet_action img {
+  width: 20px;
+  height: 20px;
+
+}
+
+/* フォロー */
+.contents .user_info .rel{
+  font-size: 14px;
+  padding-left: 0;
+  display:inline-block;
+  list-style:none;
+  margin-right:  20px;
+}
+
+/* 登録一覧画面 */
+/* .membersList {
+  margin: 0 auto;
+}
+.members {
+  margin-left: 0;
+} */
+
+/* Welcomeページ */
+.welcomePage {
+  text-align: center;
+}
+.welcomeLabel {
+  margin-top: 100px;
+}
+.welcomeSelect {
+  /* margin-top:250px; */
+  list-style:none;
+  font-size: 32px;
+  padding-left: 0;
+  /* width: 20%; */
+}
+
+/* .tab-menu ul {
+  font-size: 0;
+  padding-left: 0;
+  margin: 0;
+  text-align: center;
+
+} */
+
+.welcome-menu a{
+  display: inline-block;
+  position: relative;
+  /* color:#fff; */
+  text-decoration: none;
+  width:20%;
+}
+.tab-select a {
+  border-bottom: solid 2px #0000ff;
+  bottom:0px;
+  content: "";
+
+}
+
+.welcome-menu a:before {
+  border-bottom: solid 2px #ff0000;
+  bottom:-1px;
+  content: "";
+  left:0;
+  display: inline-block;
+  position: absolute;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: 0.4s;
+  width:100%;
+}
+
+.welcome-menu a:hover:before {
+  transform: scale(1);
+}
+
+.welcome-menu a img {
+  display: none;
+}
+.welcome-menu a:hover img {
+  display: block;
+  position: absolute;
+  left:-64px;
+}
+
+.welcomeFooter {
+  margin-top: 250px;
+  text-align: center;
+}
+
+.welcomeFooter img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* プロフィール変更 */
+.changedLabel {
+  color: red;
+  font-size: 12px;
+}
