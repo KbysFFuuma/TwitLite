@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class postTweet extends Model
+class PostTweet extends Model
 {
   //テーブル名の定義
   protected $table = 'postTweets';
