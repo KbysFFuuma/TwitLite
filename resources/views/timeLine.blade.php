@@ -4,11 +4,11 @@
 <div class="container">
 	<div class="row">
 		<!-- 左サイド -->
-		<aside class="col-md-3.5 col-md-offset-2.5">
+		<aside class="col-xs-2 col-md-3.5 col-md-offset-2.5">
 				@include('layouts.userProfile')
 		</aside>
 
-		<section class="main-content col-md-6 col-md-offset-1 hidden-md">
+		<section class="main-content col-md-8 col-md-offset-1 hidden-md">
 
 		<!-- ツイートフォーム -->
 		@include('layouts.tweetForm')
