@@ -2,13 +2,17 @@
 
 @section('content')
 <div class="container">
+	<!-- モバイル用ナビバー -->
+	@include('layouts.drawer')
 	<div class="row">
 		<!-- 左サイド -->
-		<aside class="col-xs-2 col-md-3.5 col-md-offset-2.5">
+
+
+		<aside class="userProfile col-md-3.5 ">
 				@include('layouts.userProfile')
 		</aside>
 
-		<section class="main-content col-md-8 col-md-offset-1 hidden-md">
+		<section class="main-content col-xs-12 col-sm-12 col-md-8">
 
 		<!-- ツイートフォーム -->
 		@include('layouts.tweetForm')

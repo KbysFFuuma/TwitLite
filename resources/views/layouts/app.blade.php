@@ -11,15 +11,25 @@
 
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" ></script> -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet">
+
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+    <!-- jquery & iScroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <!-- drawer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -55,12 +65,12 @@
                                 @endif
                             </li>
                         @else
-                            <li class ="nav-item setting">
-                              <a class ="nav-link" href="/setting">設定</a>
-                            </li>
-                            <li class ="nav-item userList">
-                              <a class ="nav-link" href="/members">登録一覧</a>
-                            </li>
+                        <li class ="nav-item setting">
+                          <a class ="nav-link" href="/setting">設定</a>
+                        </li>
+                        <li class ="nav-item userList">
+                          <a class ="nav-link" href="/members">登録一覧</a>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                   <img src="/storage/img/icon/{{ Auth::user()->icon }}" width="20px" height="20px">

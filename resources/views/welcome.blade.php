@@ -8,9 +8,9 @@
 			</h1>
 			<ul class="welcomeSelect">
 				<li class="welcome-menu"><a href="/login"><img src="/storage/img/parts/right-finger.png"
-					width="50px" height="50px">ログイン</a></li>
+					width="30px" height="30px">ログイン</a></li>
 				<li class="welcome-menu"><a href="/register"><img src="/storage/img/parts/right-finger.png"
-					 width="50px" height="50px">新規登録</a></li>
+					 width="30px" height="30px">新規登録</a></li>
 			</ul>
 	</div>
 <footer class="welcomeFooter">

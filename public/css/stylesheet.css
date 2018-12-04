@@ -9,6 +9,45 @@ body {
 aside {
   width: 27%;
 }
+.drawer {
+  display: none;
+}
+/* ドロワー */
+.drawer-brand #pf-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 10px;
+  /* position: absolute; */
+  /* top:20px; */
+  /* left:20px; */
+}
+.drawer_names {
+  /* display: none; */
+  font-size: 14px;
+  padding-left: 20px;
+  /* display:inline-block; */
+  list-style:none;
+  margin-right:  20px;
+}
+.drawer_userCnt {
+  font-size: 14px;
+  padding-left: 20px;
+  list-style:none;
+  margin-right:  20px;
+}
+.drawer_userCnt li {
+  display:inline-block;
+}
+/* スマホ、タブレットcss */
+@media screen and (max-width: 922px){
+  .userProfile {
+    display: none;
+  }
+  .drawer {
+    display: block;
+  }
+}
 
 /* profile */
 
@@ -80,6 +119,7 @@ aside {
   /* background-color: #000; */
   color: #fff;
   /* width: 650px; */
+  width:100%
   margin-left: 50px;
 
 }
@@ -156,7 +196,8 @@ aside {
   /* width:100%; */
 
   /* margin-left: 50px; */
-  margin-left:10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 10px;
   /* position: absolute; */
   /* top:300px; */
@@ -179,9 +220,10 @@ aside {
 /* article */
 article {
   /* width:650px; */
-  /* width:50%; */
+  width:100%;
   /* margin-left: 50px; */
-  margin-left: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   background-color: #fff;
 }
 /* timeline */
@@ -284,10 +326,14 @@ hr:first-child {
 .welcomeLabel {
   margin-top: 100px;
 }
+.welcomeLabel img {
+  width:80%;
+
+}
 .welcomeSelect {
   /* margin-top:250px; */
   list-style:none;
-  font-size: 32px;
+  font-size: 24px;
   padding-left: 0;
   width: 100%;
 }
@@ -337,7 +383,7 @@ hr:first-child {
 .welcome-menu a:hover img {
   display: block;
   position: absolute;
-  left:-64px;
+  left:-48px;
 }
 
 .welcomeFooter {
