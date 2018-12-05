@@ -13,15 +13,15 @@
   </div>
   <!-- ツイート内容 -->
   <div class="user_info">
-    <ul class="tweet rel">
+    <ul>
       <li>ツイート</li>
       <li><a href="/{{$followRow->userId}}">{{$userInfoAry[$followRow->id]['userTweetCnt']}}</a></li>
     </ul>
-    <ul class="follow rel">
+    <ul>
       <li>フォロー</li>
       <li><a href="/{{$followRow->userId}}/followList">{{$userInfoAry[$followRow->id]['followedCnt']}}</a></li>
     </ul>
-    <ul class="follower rel">
+    <ul>
       <li>フォロワー</li>
       <li><a href="/{{$followRow->userId}}/followerList">{{$userInfoAry[$followRow->id]['followerCnt']}}</a></li>
     </ul>

@@ -1,9 +1,18 @@
+/* .navbar {
+  z-index: 10000;
+} */
+
 body {
   margin: 0;
+  margin-top: 70px;
   background-color: #f8f4e6
   /* background-color: #fff; */
 }
-
+@media screen and (max-width: 922px){
+  body {
+    font-size: 10px;
+  }
+}
 
 /* aside */
 aside {
@@ -13,6 +22,24 @@ aside {
   display: none;
 }
 /* ドロワー */
+.drawer-hamburger {
+  height: 7px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.drawer-icon #pf-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  /* position: absolute; */
+  /* top:20px; */
+  /* left:20px; */
+}
+
 .drawer-brand #pf-icon {
   width: 100px;
   height: 100px;
@@ -46,20 +73,18 @@ aside {
   }
   .drawer {
     display: block;
+    z-index: 10000;
+    position: fixed;
+  }
+  .navbar .navbar-brand {
+    margin-left: 10%;
   }
 }
 
 /* profile */
 
 .profile {
-  height: 250px;
-  /* height: auto; */
   background-color: #fff;
-
-  position: relative;
-}
-
-.profile #user_name {
   font-size: 14px;
 }
 
@@ -67,50 +92,42 @@ aside {
   text-decoration: none;
 }
 
-
-
-.profile #pf-icon {
+.profile .profile-upper {
+  display: table;
+  width: 100%;
+  padding-bottom: 50px;
+}
+.upper-element {
+  display: table-cell;
+  width: 50%;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.upper-element #pf-icon {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  position: absolute;
-  top:20px;
-  left:20px;
 }
-
-.profile .this_user {
-  float: right;
-  position: absolute;
-  left:150px;
-  top:50px;
-}
-
-.profile #user_name {
+.upper-element #user_name {
   margin: 0 auto;
-  /* position: absolute; */
-  /* left:100px; */
 }
 
-.profile .user_info {
-  /* height: auto; */
-  /* width: 300px; */
-  background-color: #fff;
-  position: absolute;
-  margin: auto 10px;
-  left:30px;
-  top:150px;
+.profile .profile-lower {
+  display: table;
+  width:90%;
 }
-
-.profile .user_info .rel{
-  font-size: 14px;
-  padding-left: 0;
-  display:inline-block;
+.lower-element {
+  display: table-cell;
+}
+.lower-element ul {
   list-style:none;
-  margin-right:  20px;
+  padding-left: 30px;
+  font-size: 12px;
 }
-
-
-
+.profile .follow-btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 
 /* main-content */
 
@@ -121,10 +138,9 @@ aside {
   /* width: 650px; */
   width:100%
   margin-left: 50px;
-
 }
 .tab-menu ul {
-  font-size: 0;
+  /* font-size: 0; */
   padding-left: 0;
   margin: 0;
   text-align: center;
@@ -133,6 +149,7 @@ aside {
 
 .tab-menu li {
   font-size: 14px;
+  font-size: 10px;
   display: inline-block;
   width: 20%;
   vertical-align: middle;
@@ -220,7 +237,7 @@ aside {
 /* article */
 article {
   /* width:650px; */
-  width:100%;
+  /* width:100%; */
   /* margin-left: 50px; */
   margin-left: 5%;
   margin-right: 5%;
@@ -303,7 +320,7 @@ hr:first-child {
 }
 
 /* フォロー */
-.contents .user_info .rel{
+.contents .user_info ul{
   font-size: 14px;
   padding-left: 0;
   display:inline-block;
@@ -311,6 +328,12 @@ hr:first-child {
   margin-right:  20px;
 }
 
+/* スマホ、タブレットcss */
+@media screen and (max-width: 922px){
+  .contents .user_info ul{
+    font-size: 10px;
+  }
+}
 /* 登録一覧画面 */
 /* .membersList {
   margin: 0 auto;

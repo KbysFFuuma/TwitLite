@@ -2,8 +2,8 @@
   <header role="banner">
     <!-- ハンバーガーボタン -->
     <button type="button" class="drawer-toggle drawer-hamburger visible-xs">
-      <span class="sr-only">toggle navigation</span>
-      <span class="drawer-hamburger-icon"></span>
+      <!-- <span class="sr-only">toggle navigation</span> -->
+      <span class="drawer-icon"><img src="/storage/img/icon/{{$userInfo->icon}}" id ="pf-icon" alt="profile-icon"></span>
     </button>
     <!-- ナビゲーションの中身 -->
     <nav class="drawer-nav" role="navigation">
