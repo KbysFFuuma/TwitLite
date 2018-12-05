@@ -8,6 +8,7 @@ body {
   background-color: #f8f4e6
   /* background-color: #fff; */
 }
+/* スマホcss */
 @media screen and (max-width: 922px){
   body {
     font-size: 10px;
@@ -66,11 +67,9 @@ aside {
 .drawer_userCnt li {
   display:inline-block;
 }
-/* スマホ、タブレットcss */
+
+/* スマホcss */
 @media screen and (max-width: 922px){
-  .userProfile {
-    display: none;
-  }
   .drawer {
     display: block;
     z-index: 10000;
@@ -82,6 +81,12 @@ aside {
 }
 
 /* profile */
+.userProfile-top {
+  display: none;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
 
 .profile {
   background-color: #fff;
@@ -112,7 +117,7 @@ aside {
   margin: 0 auto;
 }
 
-.profile .profile-lower {
+.profile-lower {
   display: table;
   width:90%;
 }
@@ -127,6 +132,20 @@ aside {
 .profile .follow-btn {
   margin-right: 10px;
   margin-bottom: 10px;
+}
+.profile-top .follow-btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* スマホcss */
+@media screen and (max-width: 922px){
+  .userProfile {
+    display: none;
+  }
+  .userProfile-top {
+    display: block;
+  }
 }
 
 /* main-content */
@@ -328,7 +347,7 @@ hr:first-child {
   margin-right:  20px;
 }
 
-/* スマホ、タブレットcss */
+/* スマホcss */
 @media screen and (max-width: 922px){
   .contents .user_info ul{
     font-size: 10px;

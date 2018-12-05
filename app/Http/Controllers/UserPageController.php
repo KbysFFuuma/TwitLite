@@ -19,7 +19,6 @@ class UserPageController extends Controller
   */
     public function getIndex(Request $request, $selectUserId) {
 
-
         $loginUser = Auth::user();
         $userInfo = User::where('userId', $selectUserId)->first();
 
@@ -36,6 +35,21 @@ class UserPageController extends Controller
                       ->paginate(20);
 
 
+        /*-----------------------------*/
+        /*ログインユーザーの情報を取得    */
+        /*-----------------------------*/
+
+        //ログインユーザーのカウント情報を取得
+        $userTweetCnt = PostTweet::where('usersId',$loginUser->id)->count();
+        $followedCnt = DB::table('followers')->where('followingUserId', $loginUser->id)->count();
+        $followerCnt = DB::table('followers')->where('followedUserId', $loginUser->id)->count();
+
+        //ログインユーザーの情報をリストへ格納
+        $userInfoAry = array();
+        $userInfoAry[$loginUser->id]['userTweetCnt'] = $userTweetCnt;
+        $userInfoAry[$loginUser->id]['followedCnt'] = $followedCnt;
+        $userInfoAry[$loginUser->id]['followerCnt'] = $followerCnt;
+
         /*----------------------*/
         /*ユーザー情報を取得    */
         /*----------------------*/
@@ -51,7 +65,6 @@ class UserPageController extends Controller
         $followerCnt = DB::table('followers')->where('followedUserId', $userInfo->id)->count();
 
         //ユーザーの情報をリストへ格納
-        $userInfoAry = array();
         $userInfoAry[$userInfo->id]['isFollowed'] = $isFollowed;
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
@@ -102,6 +115,21 @@ class UserPageController extends Controller
                           ->where('followers.followingUserId' , $userInfo->id)
                           ->paginate(10);
 
+        /*-----------------------------*/
+        /*ログインユーザーの情報を取得    */
+        /*-----------------------------*/
+
+        //ログインユーザーのカウント情報を取得
+        $userTweetCnt = PostTweet::where('usersId',$loginUser->id)->count();
+        $followedCnt = DB::table('followers')->where('followingUserId', $loginUser->id)->count();
+        $followerCnt = DB::table('followers')->where('followedUserId', $loginUser->id)->count();
+
+        //ログインユーザーの情報をリストへ格納
+        $userInfoAry = array();
+        $userInfoAry[$loginUser->id]['userTweetCnt'] = $userTweetCnt;
+        $userInfoAry[$loginUser->id]['followedCnt'] = $followedCnt;
+        $userInfoAry[$loginUser->id]['followerCnt'] = $followerCnt;
+
 
         /*----------------------*/
         /*ユーザーの情報を取得    */
@@ -118,7 +146,6 @@ class UserPageController extends Controller
         $followerCnt = DB::table('followers')->where('followedUserId', $userInfo->id)->count();
 
         //ユーザーの情報をリストへ格納
-        $followCntInfo = array();
         $userInfoAry[$userInfo->id]['isFollowed'] = $isFollowed;
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
@@ -177,6 +204,21 @@ class UserPageController extends Controller
                           ->join('users', 'users.id','=','followers.followingUserId')
                           ->where('followers.followedUserId' , $userInfo->id)
                           ->paginate(10);
+
+        /*-----------------------------*/
+        /*ログインユーザーの情報を取得    */
+        /*-----------------------------*/
+
+        //ログインユーザーのカウント情報を取得
+        $userTweetCnt = PostTweet::where('usersId',$loginUser->id)->count();
+        $followedCnt = DB::table('followers')->where('followingUserId', $loginUser->id)->count();
+        $followerCnt = DB::table('followers')->where('followedUserId', $loginUser->id)->count();
+
+        //ログインユーザーの情報をリストへ格納
+        $userInfoAry = array();
+        $userInfoAry[$loginUser->id]['userTweetCnt'] = $userTweetCnt;
+        $userInfoAry[$loginUser->id]['followedCnt'] = $followedCnt;
+        $userInfoAry[$loginUser->id]['followerCnt'] = $followerCnt;
 
         /*----------------------*/
         /*ユーザーの情報を取得    */
@@ -256,6 +298,21 @@ class UserPageController extends Controller
                       ->orderBy('postTweets.created_at', 'decs')
                       ->paginate(30);
 
+        /*-----------------------------*/
+        /*ログインユーザーの情報を取得    */
+        /*-----------------------------*/
+
+        //ログインユーザーのカウント情報を取得
+        $userTweetCnt = PostTweet::where('usersId',$loginUser->id)->count();
+        $followedCnt = DB::table('followers')->where('followingUserId', $loginUser->id)->count();
+        $followerCnt = DB::table('followers')->where('followedUserId', $loginUser->id)->count();
+
+        //ログインユーザーの情報をリストへ格納
+        $userInfoAry = array();
+        $userInfoAry[$loginUser->id]['userTweetCnt'] = $userTweetCnt;
+        $userInfoAry[$loginUser->id]['followedCnt'] = $followedCnt;
+        $userInfoAry[$loginUser->id]['followerCnt'] = $followerCnt;
+
         /*----------------------*/
         /*ユーザーの情報を取得    */
         /*----------------------*/
@@ -271,7 +328,6 @@ class UserPageController extends Controller
         $followerCnt = DB::table('followers')->where('followedUserId', $userInfo->id)->count();
 
         //ユーザーの情報をリストへ格納
-        $followCntInfo = array();
         $userInfoAry[$userInfo->id]['isFollowed'] = $isFollowed;
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;

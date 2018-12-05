@@ -12,7 +12,9 @@
 		</aside>
 
 		<section class="main-content col-xs-12 col-sm-12 col-md-8">
-
+			<div class="userProfile-top">
+				@include('layouts.userProfileTop')
+			</div>
 		<!-- タブメニュー -->
 		@include('layouts.tabMenu')
 
