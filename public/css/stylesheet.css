@@ -77,6 +77,11 @@ aside {
     top:0;
     left:0;
   }
+  .drawer header {
+    display:flex;
+    z-index: 10000;
+    position: fixed;
+  }
   .navbar .navbar-brand {
     margin-left: 10%;
   }
