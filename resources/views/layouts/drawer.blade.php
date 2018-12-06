@@ -1,8 +1,8 @@
 <div class="drawer drawer--left">
   <header role="banner">
     <!-- ハンバーガーボタン -->
-    <button type="button" class="drawer-toggle drawer-hamburger visible-xs">
-      <!-- <span class="sr-only">toggle navigation</span> -->
+    <button type="button" class="drawer-toggle drawer-hamburger">
+      <span class="sr-only">toggle navigation</span>
       <span class="drawer-icon"><img src="/storage/img/icon/{{Auth::user()->icon}}" id ="pf-icon" alt="profile-icon"></span>
     </button>
     <!-- ナビゲーションの中身 -->
