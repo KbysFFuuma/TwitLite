@@ -71,16 +71,11 @@ aside {
 /* スマホcss */
 @media screen and (max-width: 922px){
   .drawer {
-    display:flex;
-    z-index: 10000;
+    display:block;
+    z-index: 100000;
     position: fixed;
     top:0;
     left:0;
-  }
-  .drawer header {
-    display:flex;
-    z-index: 10000;
-    position: fixed;
   }
   .navbar .navbar-brand {
     margin-left: 10%;
