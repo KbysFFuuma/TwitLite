@@ -24,8 +24,8 @@ aside {
 }
 /* ドロワー */
 .drawer-hamburger {
-  height: 7px;
-  padding: 0px;
+  /* height: 7px;
+  padding: 0px; */
   vertical-align: middle;
 }
 
