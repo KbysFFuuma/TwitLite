@@ -73,7 +73,7 @@ aside {
   .drawer {
     max-width:200px;
     display:block;
-    z-index: 9999;
+    z-index: 19999;
     position: fixed;
     top:0;
     left:0;
