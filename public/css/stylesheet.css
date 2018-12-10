@@ -71,6 +71,7 @@ aside {
 /* スマホcss */
 @media screen and (max-width: 922px){
   .drawer {
+    max-width:200px;
     display:block;
     z-index: 100000;
     position: fixed;
