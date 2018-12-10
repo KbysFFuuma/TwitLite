@@ -20,7 +20,7 @@ aside {
   width: 27%;
 }
 .drawer {
-  display: none;
+  /* display: none; */
 }
 /* ドロワー */
 .drawer-hamburger {
