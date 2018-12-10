@@ -24,10 +24,6 @@ header {
   display:none;
 }
 
-/*アイコンのスペース*/
-#nav-open {
-}
-
 /*閉じる用の薄黒カバー*/
 #nav-close {
   display: none;/*はじめは隠しておく*/
@@ -70,13 +66,17 @@ header {
   box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
+/*ドロワーメニューアイコン*/
 .nav-icon #pf-icon {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   display: inline-block;
-  vertical-align: middle;
+  /* vertical-align:top; */
   display: none;
+  position: fixed;
+  top:12px;
+  left:12px;
 }
 
 /* スマホcss */
