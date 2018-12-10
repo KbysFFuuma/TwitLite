@@ -187,9 +187,9 @@ var utils = (function () {
 		mousemove: 2,
 		mouseup: 2,
 
-		pointerdown: 3,
-		pointermove: 3,
-		pointerup: 3,
+		pointerdown: 1,
+		pointermove: 1,
+		pointerup: 1,
 
 		MSPointerDown: 3,
 		MSPointerMove: 3,
@@ -428,7 +428,7 @@ IScroll.prototype = {
 		}
 
 		if ( this.options.preventDefault && !utils.isBadAndroid && !utils.preventDefaultException(e.target, this.options.preventDefaultException) ) {
-			e.preventDefault();
+			//e.preventDefault();
 		}
 
 		var point = e.touches ? e.touches[0] : e,
@@ -568,7 +568,7 @@ IScroll.prototype = {
 		}
 
 		if ( this.options.preventDefault && !utils.preventDefaultException(e.target, this.options.preventDefaultException) ) {
-			e.preventDefault();
+			//e.preventDefault();
 		}
 
 		var point = e.changedTouches ? e.changedTouches[0] : e,
