@@ -39,9 +39,13 @@
   </header>
 </div>
 
-<!-- ドロワーメニューの利用宣言 -->
 <script>
+// ドロワーメニューの利用宣言
 $(document).ready(function() {
   $('.drawer').drawer();
+});
+ // ドロワーメニュークリック時、クラス付与
+$(document).on("click", ".drawer-toggle", function() {
+  $('html, body').toggleClass('fixed');
 });
 </script>
