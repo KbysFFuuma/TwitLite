@@ -43,8 +43,11 @@
 
   <!-- ドロワーメニューの利用宣言 -->
   <script>
-  $(document).ready(function() {
+  $(function() {
     $('.drawer').drawer();
   });
+  // $(document).ready(function() {
+  //   $('.drawer').drawer();
+  // });
   </script>
 </div>
