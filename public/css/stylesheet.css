@@ -8,6 +8,7 @@ body {
 .fixed {
   overflow: auto;
   height: 100%;
+  z-index: 999;
 }
 
 /* スマホcss */
@@ -30,6 +31,7 @@ aside {
   padding: 0px; */
   vertical-align: middle;
 }
+
 
 .drawer-icon #pf-icon {
   width: 30px;
@@ -82,7 +84,6 @@ aside {
     filter:alpha(opacity=100);
     -moz-opacity: 1.0;
     opacity: 1.0;
-}
   }
   .navbar .navbar-brand {
     margin-left: 10%;
