@@ -4,7 +4,7 @@
   <hr>
   <section class="contents">
   <!-- アイコン -->
-  <img src="/storage/img/icon/{{$tweetRow->icon}}" id ="userMiniIcon" alt="profile-icon">
+  <img src="{{$userInfoAry[$tweetRow->id]['userIcon']}}" id ="userMiniIcon" alt="profile-icon">
   <!-- ユーザー名 -->
   <div class="user_block">
   <a href="/{{$tweetRow->userId}}">{{$tweetRow->name}}</a>

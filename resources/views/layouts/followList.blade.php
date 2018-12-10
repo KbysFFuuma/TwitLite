@@ -5,7 +5,7 @@
   <hr>
   <section class="contents">
   <!-- アイコン -->
-  <img src="/storage/img/icon/{{$followRow->icon}}" id ="userMiniIcon" alt="profile-icon">
+  <img src="{{$userInfoAry[$followRow->id]['userIcon']}}" id ="userMiniIcon" alt="profile-icon">
   <!-- ユーザー名 -->
   <div class="user_block">
   <a href="/{{$followRow->userId}}">{{$followRow->name}}</a>

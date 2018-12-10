@@ -7,6 +7,7 @@ use App\PostTweet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class othersController extends Controller
 {
@@ -42,6 +43,9 @@ class othersController extends Controller
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
+        //アイコンイメージ
+        $url = Storage::disk('s3')->url($userInfo->icon);
+        $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
         /*-----------------------------*/
         /*登録者一覧のユーザー情報を取得  */
@@ -63,6 +67,10 @@ class othersController extends Controller
           $userInfoAry[$row->id]['userTweetCnt'] = $userTweetCnt;
           $userInfoAry[$row->id]['followedCnt'] = $followedCnt;
           $userInfoAry[$row->id]['followerCnt'] = $followerCnt;
+
+          //登録ユーザーのアイコンを取得
+          $url = Storage::disk('s3')->url($row->icon);
+          $userInfoAry[$row->id]['userIcon'] = $url;
         }
 
         return view('/membersPage', compact('userInfo', 'members', 'userInfoAry'));
@@ -91,6 +99,9 @@ class othersController extends Controller
           $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
           $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
           $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
+          //アイコンイメージ
+          $url = Storage::disk('s3')->url($userInfo->icon);
+          $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
           return view('/settingPage', compact('userInfo', 'userInfoAry'));
       }

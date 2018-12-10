@@ -7,6 +7,7 @@ use App\Follower;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class TimeLineController extends Controller
 {
@@ -61,11 +62,21 @@ class TimeLineController extends Controller
       $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
       $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
       $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
+      //アイコンイメージ
+      $url = Storage::disk('s3')->url($userInfo->icon);
+      $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
-      /*-------------------------------------*/
-      /*ログインユーザーがいいね済みか確認      */
-      /*-------------------------------------*/
       foreach ($userTweets as $row) {
+
+        /*-------------------------------------*/
+        /*ツイートユーザーのアイコンを取得        */
+        /*-------------------------------------*/
+        $url = Storage::disk('s3')->url($row->icon);
+        $userInfoAry[$row->id]['userIcon'] = $url;
+
+        /*-------------------------------------*/
+        /*ログインユーザーがいいね済みか確認      */
+        /*-------------------------------------*/
 
         //いいねしているか確認(true==1)
         $isFavorited = DB::table('favorites')->where(

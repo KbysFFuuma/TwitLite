@@ -33,7 +33,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md nav fixed-top navbar-light navbar-laravel navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                   @guest
@@ -72,7 +72,14 @@
                           <a class ="nav-link" href="/members">登録一覧</a>
                         </li>
                         <li class ="nav-item userList">
-                          <a class ="nav-link" href="{{ route('logout') }}">ログアウト</a>
+                          <a class="nav-link" href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                          </form>
                         </li>
                             <!-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

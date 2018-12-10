@@ -7,6 +7,7 @@ use App\PostTweet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserPageController extends Controller
 {
@@ -49,6 +50,9 @@ class UserPageController extends Controller
         $userInfoAry[$loginUser->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$loginUser->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$loginUser->id]['followerCnt'] = $followerCnt;
+        //アイコンイメージ
+        $url = Storage::disk('s3')->url($userInfo->icon);
+        $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
         /*----------------------*/
         /*ユーザー情報を取得    */
@@ -130,7 +134,6 @@ class UserPageController extends Controller
         $userInfoAry[$loginUser->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$loginUser->id]['followerCnt'] = $followerCnt;
 
-
         /*----------------------*/
         /*ユーザーの情報を取得    */
         /*----------------------*/
@@ -150,6 +153,10 @@ class UserPageController extends Controller
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
+
+        //アイコンイメージ
+        $url = Storage::disk('s3')->url($userInfo->icon);
+        $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
         /*---------------------------------*/
         /*フォロー一覧のユーザー情報を取得    */
@@ -172,6 +179,10 @@ class UserPageController extends Controller
           $userInfoAry[$row->id]['userTweetCnt'] = $userTweetCnt;
           $userInfoAry[$row->id]['followedCnt'] = $followedCnt;
           $userInfoAry[$row->id]['followerCnt'] = $followerCnt;
+
+          //アイコンイメージ
+          $url = Storage::disk('s3')->url($row->icon);
+          $userInfoAry[$row->id]['userIcon'] = $url;
         }
 
         /*----------------------*/
@@ -240,6 +251,9 @@ class UserPageController extends Controller
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
+        //アイコンイメージ
+        $url = Storage::disk('s3')->url($userInfo->icon);
+        $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
         /*---------------------------------*/
         /*フォロワー一覧のユーザー情報を取得  */
@@ -262,6 +276,10 @@ class UserPageController extends Controller
           $userInfoAry[$row->id]['userTweetCnt'] = $userTweetCnt;
           $userInfoAry[$row->id]['followedCnt'] = $followedCnt;
           $userInfoAry[$row->id]['followerCnt'] = $followerCnt;
+
+          //アイコンイメージ
+          $url = Storage::disk('s3')->url($row->icon);
+          $userInfoAry[$row->id]['userIcon'] = $url;
         }
 
         /*----------------------*/
@@ -332,12 +350,23 @@ class UserPageController extends Controller
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
+        
+        //アイコンイメージ
+        $url = Storage::disk('s3')->url($userInfo->icon);
+        $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
 
-        /*-------------------------------------*/
-        /*ログインユーザーがいいね済みか確認      */
-        /*-------------------------------------*/
         foreach ($favariteTweets as $row) {
+
+          /*-------------------------------------*/
+          /*ツイートユーザーのアイコンを取得        */
+          /*-------------------------------------*/
+          $url = Storage::disk('s3')->url($row->icon);
+          $userInfoAry[$row->id]['userIcon'] = $url;
+
+          /*-------------------------------------*/
+          /*ログインユーザーがいいね済みか確認      */
+          /*-------------------------------------*/
 
           //いいねしているか確認(true==1)
           $isFavorited = DB::table('favorites')->where(

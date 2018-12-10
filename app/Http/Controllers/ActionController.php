@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ActionController extends Controller
 {
@@ -120,15 +121,25 @@ class ActionController extends Controller
         ]);
         //変更するアイコンがセットされている場合
         if (!is_null($request->icon)) {
+
+        //AWS s3 へ保存
+          $image = $request->file('icon');
           //ファイル名を取得
           $imageName = 'userIcon' .$userInfo->id. '.'
           . $request->file('icon')->getClientOriginalExtension();
+          $path = Storage::disk('s3')->putFileAs('icons', $image, $imageName, 'public');
+
+          // $path = Storage::disk('s3')->putFile('icons', $image, 'public');
+
+          //ファイル名を取得
+          // $imageName = 'userIcon' .$userInfo->id. '.'
+          // . $request->file('icon')->getClientOriginalExtension();
           //storageへファイル保存
-          $request->file('icon')->storeAs('public/img/icon', $imageName);
+          // $request->file('icon')->storeAs('public/img/icon', $imageName);
           //データベースをアップデート
           User::where('id', $userInfo->id)
           ->update([
-            'icon' => $imageName,
+            'icon' => $path,
           ]);
         }
 

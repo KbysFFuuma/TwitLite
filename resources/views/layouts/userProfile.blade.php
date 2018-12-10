@@ -2,10 +2,10 @@
 <section class="profile">
     <div class="profile-upper">
       <div class="upper-element">
-        <img src="/storage/img/icon/{{$userInfo->icon}}" id ="pf-icon" alt="profile-icon">
+        <!-- ログインユーザーのアイコン表示 -->
+        <img src="{{$userInfoAry[$userInfo->id]['userIcon']}}" id ="pf-icon" alt="profile-icon">
       </div>
       <div class="upper-element">
-        <section >
           <p id="user_name">{{$userInfo->name}}</p>
           <a href="/{{$userInfo->userId}}">{{"@" .$userInfo->userId}}</a>
       </div>

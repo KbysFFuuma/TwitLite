@@ -11,7 +11,7 @@ body {
 /* スマホcss */
 @media screen and (max-width: 922px){
   body {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -368,14 +368,14 @@ hr:first-child {
   text-align: center;
 }
 .welcomeLabel {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .welcomeLabel img {
   width:80%;
 
 }
 .welcomeSelect {
-  /* margin-top:250px; */
+  margin-top:50px;
   list-style:none;
   font-size: 24px;
   padding-left: 0;
@@ -395,7 +395,7 @@ hr:first-child {
   position: relative;
   /* color:#fff; */
   text-decoration: none;
-  width:20%;
+  width:30%;
 }
 .tab-select a {
   border-bottom: solid 2px #0000ff;
@@ -431,7 +431,7 @@ hr:first-child {
 }
 
 .welcomeFooter {
-  margin-top: 250px;
+  margin-top: 200px;
   text-align: center;
 }
 
