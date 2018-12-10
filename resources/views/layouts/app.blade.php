@@ -32,7 +32,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md nav fixed-top navbar-light navbar-laravel navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md fixed-top navbar-light navbar-laravel navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                   @guest

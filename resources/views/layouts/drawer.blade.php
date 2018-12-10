@@ -1,10 +1,9 @@
 <div class="drawer drawer--left">
   <header role="banner">
     <!-- ハンバーガーボタン -->
-    <button type="button" class="drawer-toggle drawer-hamburger">
+    <button type="submit" class="drawer-toggle drawer-hamburger">
       <span class="sr-only">toggle navigation</span>
-      <!-- <span class="drawer-icon"><img src="{{Storage::disk('s3')->url(Auth::user()->icon)}}" id ="pf-icon" alt="profile-icon"></span> -->
-      <span class="drawer-hamburger-icon"></span>
+      <span class="drawer-icon"><img src="{{Storage::disk('s3')->url(Auth::user()->icon)}}" id ="pf-icon" alt="profile-icon"></span>
     </button>
     <!-- ナビゲーションの中身 -->
     <nav class="drawer-nav" role="navigation">

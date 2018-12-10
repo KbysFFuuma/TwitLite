@@ -14,7 +14,6 @@ body {
 @media screen and (max-width: 922px){
   body {
     font-size: 12px;
-    z-index: 9999;
   }
 }
 
@@ -76,7 +75,7 @@ aside {
   .drawer {
     max-width:100px;
     display:flex;
-    z-index: 19999;
+    z-index: 9999;
     position: fixed;
     top:0;
     left:0;
