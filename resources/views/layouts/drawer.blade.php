@@ -1,4 +1,5 @@
 <div class="drawer drawer--left">
+  <header role="banner">
     <!-- ハンバーガーボタン -->
     <button type="button" class="drawer-toggle drawer-hamburger">
       <span class="sr-only">toggle navigation</span>
@@ -35,6 +36,7 @@
         </li>
       </ul>
     </nav>
+  </header>
 
   <!-- ドロワーメニューの利用宣言 -->
   <script>

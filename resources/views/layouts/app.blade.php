@@ -10,7 +10,6 @@
     <title>{{ config('app.title', 'Twit:Lite') }}</title>
 
     <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" ></script> -->
     <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Styles -->
@@ -104,6 +103,11 @@
                 </div>
             </div>
         </nav>
+        @guest
+        @else
+          <!-- モバイル用ナビバー -->
+      		@include('layouts.drawer')
+        @endguest
 
         <main class="py-4">
             @yield('content')

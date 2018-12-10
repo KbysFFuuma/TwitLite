@@ -2,8 +2,7 @@
 
 @section('content')
 <div class="container">
-	<!-- モバイル用ナビバー -->
-	@include('layouts.drawer')
+	
 	<div class="row">
 		<!-- 左サイド -->
 
