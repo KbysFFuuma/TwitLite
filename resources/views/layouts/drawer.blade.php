@@ -3,7 +3,8 @@
     <!-- ハンバーガーボタン -->
     <button type="button" class="drawer-toggle drawer-hamburger">
       <span class="sr-only">toggle navigation</span>
-      <span class="drawer-icon"><img src="{{Storage::disk('s3')->url(Auth::user()->icon)}}" id ="pf-icon" alt="profile-icon"></span>
+      <!-- <span class="drawer-icon"><img src="{{Storage::disk('s3')->url(Auth::user()->icon)}}" id ="pf-icon" alt="profile-icon"></span> -->
+      <span class="drawer-hamburger-icon"></span>
     </button>
     <!-- ナビゲーションの中身 -->
     <nav class="drawer-nav" role="navigation">
