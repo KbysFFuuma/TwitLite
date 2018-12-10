@@ -79,6 +79,10 @@ aside {
     position: fixed;
     top:0;
     left:0;
+    filter:alpha(opacity=100);
+    -moz-opacity: 1.0;
+    opacity: 1.0;
+}
   }
   .navbar .navbar-brand {
     margin-left: 10%;
