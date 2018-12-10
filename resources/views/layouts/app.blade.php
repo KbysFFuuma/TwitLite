@@ -19,10 +19,10 @@
     <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet">
 
     <!-- jquery & iScroll -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="{{ asset('js/iscroll.js') }}"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- <script src="{{ asset('js/iscroll.js') }}"></script> -->
     <!-- drawer.js -->
-    <script src="{{ asset('js/drawer.js') }}"></script>
+    <!-- <script src="{{ asset('js/drawer.js') }}"></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

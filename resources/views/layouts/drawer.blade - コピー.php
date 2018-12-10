@@ -1,12 +1,13 @@
-<header>
-  <div id="nav-drawer">
-      <input id="nav-input" type="checkbox" class="nav-unshown">
-      <label class="nav-icon" for="nav-input"><span>
-        <img src="{{Storage::disk('s3')->url(Auth::user()->icon)}}" id ="pf-icon" alt="profile-icon"></span></label>
-      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-      <div id="nav-content">
-
-        <ul class="drawer-menu">
+<div class="drawer drawer--left">
+  <header role="banner">
+    <!-- ハンバーガーボタン -->
+    <button type="button" class="drawer-toggle drawer-hamburger">
+      <span class="sr-only">toggle navigation</span>
+      <span class="drawer-icon"><img src="{{Storage::disk('s3')->url(Auth::user()->icon)}}" id ="pf-icon" alt="profile-icon"></span>
+    </button>
+    <!-- ナビゲーションの中身 -->
+    <nav class="drawer-nav" role="navigation">
+      <ul class="drawer-menu">
         <li><a class="drawer-brand" href="/{{Auth::user()->userId}}">
           <img src="{{Storage::disk('s3')->url(Auth::user()->icon)}}" id ="pf-icon" alt="profile-icon"></a></li>
         <li><a class="drawer-menu-item" href="#">
@@ -34,20 +35,17 @@
           </ul>
         </li>
       </ul>
-
-      </div>
-  </div>
-</header>
-
-
+    </nav>
+  </header>
+</div>
 
 <script>
 // ドロワーメニューの利用宣言
-// $(document).ready(function() {
-//   $('.drawer').drawer();
-// });
+$(document).ready(function() {
+  $('.drawer').drawer();
+});
  // ドロワーメニュークリック時、クラス付与
-// $(document).on("click", ".drawer-toggle", function() {
-//   $('html, body').toggleClass('fixed');
-// });
+$(document).on("click", ".drawer-toggle", function() {
+  $('html, body').toggleClass('fixed');
+});
 </script>
