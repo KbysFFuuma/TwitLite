@@ -37,14 +37,11 @@
       </ul>
     </nav>
   </header>
-
-  <!-- ドロワーメニューの利用宣言 -->
-  <script>
-  // $(function() {
-  //   $('.drawer').drawer();
-  // });
-  $(document).ready(function() {
-    $('.drawer').drawer();
-  });
-  </script>
 </div>
+
+<!-- ドロワーメニューの利用宣言 -->
+<script>
+$(document).ready(function() {
+  $('.drawer').drawer();
+});
+</script>

@@ -72,7 +72,7 @@ aside {
 @media screen and (max-width: 922px){
   .drawer {
     max-width:200px;
-    display:block;
+    display:flex;
     z-index: 19999;
     position: fixed;
     top:0;
