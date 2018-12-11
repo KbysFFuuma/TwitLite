@@ -1,11 +1,22 @@
+/* body start */
 body {
   margin: 0;
   margin-top: 70px;
   background-color: #f8f4e6
   /* background-color: #fff; */
 }
+/* スマホcss */
+@media screen and (max-width: 922px){
+  body {
+    font-size: 12px;
+  }
+  .navbar .navbar-brand {
+    margin-left: 10%;
+  }
+}
+/* body end */
 
-/* 試しここから */
+/* ドロワーメニュー関係 start */
 
 header {
   padding:10px;
@@ -18,10 +29,38 @@ header {
 #nav-drawer {
   position: relative;
 }
+/*ドロワーメニューアイコン*/
+.nav-icon #pf-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  /* vertical-align:top; */
+  display: none;
+  position: fixed;
+  top:12px;
+  left:12px;
+}
+/* スマホcss */
+@media screen and (max-width: 922px){
+  .nav-icon #pf-icon {
+    display: block;
+  }
+}
 
 /*チェックボックス等は非表示に*/
 .nav-unshown {
   display:none;
+}
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
 /*閉じる用の薄黒カバー*/
@@ -38,14 +77,15 @@ header {
   transition: .3s ease-in-out;
 }
 
-/*中身*/
+
+/* ドロワーメニュー中身 */
 #nav-content {
   overflow: auto;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;/*最前面に*/
-  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  width: 60%;/*右側に隙間を作る（閉じるカバーを表示）*/
   max-width: 330px;/*最大幅（調整してください）*/
   height: 100%;
   background: #fff;/*背景色*/
@@ -54,149 +94,77 @@ header {
   transform: translateX(-105%);/*左に隠しておく*/
 }
 
-/*チェックが入ったらもろもろ表示*/
-#nav-input:checked ~ #nav-close {
-  display: block;/*カバーを表示*/
-  opacity: .5;
+.drawer-menu {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding:0;
+  list-style:none;
 }
-
-#nav-input:checked ~ #nav-content {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);/*中身を表示（右へスライド）*/
-  box-shadow: 6px 0 25px rgba(0,0,0,.15);
-}
-
-/*ドロワーメニューアイコン*/
-.nav-icon #pf-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: inline-block;
-  /* vertical-align:top; */
-  display: none;
-  position: fixed;
-  top:12px;
-  left:12px;
-}
-
-/* スマホcss */
-@media screen and (max-width: 922px){
-  .nav-icon #pf-icon {
-    display: block;
-  }
-}
-
-/* ここまで */
-
-
-
-
-.fixed {
-  overflow: auto;
-  height: 100%;
-  z-index: 999;
-}
-
-/* スマホcss */
-@media screen and (max-width: 922px){
-  body {
-    font-size: 12px;
-  }
-}
-
-/* aside */
-aside {
-  width: 27%;
-}
-.drawer {
-  display: none;
-}
-/* ドロワー */
-.drawer-hamburger {
-  /* height: 7px;
-  padding: 0px; */
-  vertical-align: middle;
-}
-
-
-.drawer-icon #pf-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  top: 12px;
-  left: 10px;
-  /* position: absolute; */
-  /* top:20px; */
-  /* left:20px; */
-}
-
 .drawer-brand #pf-icon {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-top: 10px;
-  /* position: absolute; */
-  /* top:20px; */
-  /* left:20px; */
+}
+.drawer-menu-item {
+  font-size:1rem;
+  display:block;
+  padding:.75rem;
+  text-decoration:none;
+  color:#222;
 }
 .drawer_names {
-  /* display: none; */
   font-size: 14px;
-  padding-left: 20px;
-  /* display:inline-block; */
+  padding-left: 0;
+  /* margin-left: 20px; */
   list-style:none;
-  margin-right:  20px;
+  /* margin-right:  20px; */
 }
 .drawer_userCnt {
   font-size: 14px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
+  padding-left: .75rem;
   list-style:none;
-  margin-right:  20px;
+  /* margin-right:  20px; */
 }
 .drawer_userCnt li {
   display:inline-block;
 }
 
-/* スマホcss */
-@media screen and (max-width: 922px){
-  .drawer {
-    max-width:100px;
-    display:flex;
-    z-index: 9999;
-    position: fixed;
-    top:0;
-    left:0;
-    filter:alpha(opacity=100);
-    -moz-opacity: 1.0;
-    opacity: 1.0;
-  }
-  .navbar .navbar-brand {
-    margin-left: 10%;
-  }
-}
+/* ドロワーメニュー関係 end */
 
-/* profile */
+
+/* aside start*/
+aside {
+  width: 27%;
+}
+/* aside end */
+
+
+/* プロフィール start */
 .userProfile-top {
   display: none;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
 }
-
 .profile {
   background-color: #fff;
   font-size: 14px;
 }
-
 .profile a {
   text-decoration: none;
 }
-
+.profile .profile-middle {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.profile-middle p {
+  font-size: 10px;
+}
 .profile .profile-upper {
   display: table;
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 .upper-element {
   display: table-cell;
@@ -208,13 +176,14 @@ aside {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+
 }
 .upper-element #user_name {
   margin: 0 auto;
 }
-
 .profile-lower {
   display: table;
+  padding-top: 20px;
   width:90%;
 }
 .lower-element {
@@ -233,7 +202,6 @@ aside {
   margin-right: 10px;
   margin-bottom: 10px;
 }
-
 /* スマホcss */
 @media screen and (max-width: 922px){
   .userProfile {
@@ -244,47 +212,37 @@ aside {
   }
 }
 
-/* main-content */
+/* プロフィール end */
 
-/* タブメニュー */
+
+/* タブメニュー start*/
 .tab-menu {
-  /* background-color: #000; */
   color: #fff;
-  /* width: 650px; */
-  width:100%
-  margin-left: 50px;
+  width:100%;
 }
 .tab-menu ul {
-  /* font-size: 0; */
   padding-left: 0;
   margin: 0;
   text-align: center;
-
 }
 
 .tab-menu li {
-  font-size: 14px;
   font-size: 10px;
   display: inline-block;
   width: 20%;
   vertical-align: middle;
-  /* margin-bottom: 5px; */
-  /* margin: 0; */
-  /* text-align: center; */
 }
 
 .tab-menu a{
   display: inline-block;
   position: relative;
-  /* color:#fff; */
   text-decoration: none;
   width:100%;
 }
 .tab-select a {
   border-bottom: solid 2px #0000ff;
-  bottom:0px;
+  bottom:-1px;
   content: "";
-
 }
 
 .tab-not-select a:before {
@@ -293,7 +251,6 @@ aside {
   content: "";
   left:0;
   display: inline-block;
-  /* vertical-align: middle; */
   position: absolute;
   transform: scale(0, 1);
   transition: 0.4s;
@@ -304,35 +261,21 @@ aside {
   transform: scale(1);
 }
 
-/* userAtherPage */
-/* .userAtherPage {
-  width:650px;
-  margin-left: 50px;
-  margin-bottom: 0;
-  padding-left: 0;
+/* タブメニュー end*/
 
-  display: flex;
-  justify-content: space-between;
-} */
+/* article start*/
+article {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #fff;
+}
+/* article end */
 
-/* .userAtherPage li {
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  list-style:none;
-} */
-
-/* tweetFrom */
+/* ツイートフォーム start */
 .tweetFrom {
-  /* width:650px; */
-  /* width:100%; */
-
-  /* margin-left: 50px; */
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 10px;
-  /* position: absolute; */
-  /* top:300px; */
 }
 
 .tweetFrom .tweetArea {
@@ -343,39 +286,25 @@ aside {
 }
 
 .tweetForm .postBtn {
-  /* width: 650px; */
   text-align: right;
   width: 100%;
-  /* background: rgba(0,0,0,0); */
 }
+/* ツイートフォーム end */
 
-/* article */
-article {
-  /* width:650px; */
-  /* width:100%; */
-  /* margin-left: 50px; */
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: #fff;
-}
-/* timeline */
-
+/* ボーダー設定 start */
 hr {
   margin-top: 10px;
   margin-bottom: 0;
   border-width: 1px 0 0 0;
 }
-
 hr:first-child {
   margin-top: 0;
 }
+/* ボーダー設定 end */
 
-/* コンテンツ */
-
-/* タイムライン */
+/* タイムライン start*/
 .contents {
   background-color: #fff;
-  /* border: solid #808000; */
   margin-top: 10px;
   margin-left: 80px;
   margin-right: 20px;
@@ -411,16 +340,12 @@ hr:first-child {
   height: 25px;
   width: 70px;
   padding: 0;
-  /* background-image: url("/storage/img/parts/favorite.png") no-repeat; */
-  /* background-size: 25px 25px; */
 }
 
 .tweet_action .delete-btn {
   height: 25px;
   width: 70px;
   padding: 0;
-  /* background-image: url("/storage/img/parts/delete.png") no-repeat; */
-  /* background-size: 25px 25px; */
 }
 
 .tweet_action .action {
@@ -431,7 +356,6 @@ hr:first-child {
 .tweet_action img {
   width: 20px;
   height: 20px;
-
 }
 
 /* フォロー */
@@ -449,15 +373,10 @@ hr:first-child {
     font-size: 10px;
   }
 }
-/* 登録一覧画面 */
-/* .membersList {
-  margin: 0 auto;
-}
-.members {
-  margin-left: 0;
-} */
 
-/* Welcomeページ */
+/* タイムライン end*/
+
+/* Welcomeページ start*/
 .welcomePage {
   text-align: center;
 }
@@ -476,26 +395,11 @@ hr:first-child {
   width: 100%;
 }
 
-/* .tab-menu ul {
-  font-size: 0;
-  padding-left: 0;
-  margin: 0;
-  text-align: center;
-
-} */
-
 .welcome-menu a{
   display: inline-block;
   position: relative;
-  /* color:#fff; */
   text-decoration: none;
   width:30%;
-}
-.tab-select a {
-  border-bottom: solid 2px #0000ff;
-  bottom:0px;
-  content: "";
-
 }
 
 .welcome-menu a:before {
@@ -535,8 +439,11 @@ hr:first-child {
   border-radius: 50%;
 }
 
-/* プロフィール変更 */
+/* Welcomeページ end*/
+
+/* プロフィール変更 start*/
 .changedLabel {
   color: red;
   font-size: 12px;
 }
+/* プロフィール変更 end */

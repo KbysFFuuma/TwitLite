@@ -69,6 +69,7 @@ class UserPageController extends Controller
         $followerCnt = DB::table('followers')->where('followedUserId', $userInfo->id)->count();
 
         //ユーザーの情報をリストへ格納
+        $userInfoAry[$userInfo->id]['profileText'] = $userInfo->profile;
         $userInfoAry[$userInfo->id]['isFollowed'] = $isFollowed;
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
@@ -150,6 +151,7 @@ class UserPageController extends Controller
 
         //ユーザーの情報をリストへ格納
         $userInfoAry[$userInfo->id]['isFollowed'] = $isFollowed;
+        $userInfoAry[$userInfo->id]['profileText'] = $userInfo->profile;
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
@@ -248,6 +250,7 @@ class UserPageController extends Controller
         //ユーザーの情報をリストへ格納
         $followCntInfo = array();
         $userInfoAry[$userInfo->id]['isFollowed'] = $isFollowed;
+        $userInfoAry[$userInfo->id]['profileText'] = $userInfo->profile;
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
@@ -347,10 +350,11 @@ class UserPageController extends Controller
 
         //ユーザーの情報をリストへ格納
         $userInfoAry[$userInfo->id]['isFollowed'] = $isFollowed;
+        $userInfoAry[$userInfo->id]['profileText'] = $userInfo->profile;
         $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
         $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
         $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;
-        
+
         //アイコンイメージ
         $url = Storage::disk('s3')->url($userInfo->icon);
         $userInfoAry[$userInfo->id]['userIcon'] = $url;

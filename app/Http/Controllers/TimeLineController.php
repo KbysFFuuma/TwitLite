@@ -59,6 +59,7 @@ class TimeLineController extends Controller
 
       //ログインユーザーの情報をリストへ格納
       $userInfoAry = array();
+      // $userInfoAry[$userInfo->id]['profileText'] = $userInfo->profile;
       $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
       $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
       $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;

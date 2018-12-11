@@ -15,6 +15,7 @@
             <li>{{"@" .Auth::user()->userId}}</li>
           </ul></a>
         </li>
+        <li><a class ="drawer-menu-item" href="/{{Auth::user()->userId}}">マイプロフィール</a></li>
         <li>
           <ul class="drawer_userCnt">
             <li>ツイート　</li>
@@ -38,16 +39,3 @@
       </div>
   </div>
 </header>
-
-
-
-<script>
-// ドロワーメニューの利用宣言
-// $(document).ready(function() {
-//   $('.drawer').drawer();
-// });
- // ドロワーメニュークリック時、クラス付与
-// $(document).on("click", ".drawer-toggle", function() {
-//   $('html, body').toggleClass('fixed');
-// });
-</script>

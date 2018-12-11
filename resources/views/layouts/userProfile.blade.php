@@ -10,6 +10,15 @@
           <a href="/{{$userInfo->userId}}">{{"@" .$userInfo->userId}}</a>
       </div>
     </div>
+    @isset ($userInfoAry[$userInfo->id]['profileText'])
+    <!-- プロフィールページでのみ表示する -->
+      <div class="profile-middle">
+        <div class="middle-element">
+            <p>自己紹介</p>
+            {{$userInfoAry[$userInfo->id]['profileText']}}
+        </div>
+      </div>
+    @endisset
     <div class="profile-lower">
       <div class="lower-element">
         <ul class="tweet">
