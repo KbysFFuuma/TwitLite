@@ -27,11 +27,6 @@ class TimeLineController extends Controller
                     ->select('followedUserId')
                     ->where('followers.followingUserId' , $userInfo->id);
 
-      // //いいね！したツイート一覧を取得
-      // $subQueryFavorites = DB::table('favorites')
-      //               ->select('favoritedPostId')
-      //               ->where('favorittingUserId', $userInfo->id);
-
       /*----------------------*/
       /*TL一覧を取得する       */
       /*----------------------*/
@@ -40,11 +35,9 @@ class TimeLineController extends Controller
                             , 'users.id', 'users.userId', 'users.name', 'users.icon')
                     ->join('users', 'users.id', '=', 'postTweets.usersId')
                     ->leftJoin(DB::raw("({$subQueryFollows->toSql()}) as followed"), 'followed.followedUserId','=', 'users.id')
-                    // ->leftJoin(DB::raw("({$subQueryFavorites->toSql()}) as favorited"), 'favorited.favoritedPostId','=', 'postTweets.postId')
                     ->whereNotNull('followed.followedUserId')
                     ->orWhere('users.id', $userInfo->id)
                     ->mergeBindings($subQueryFollows)
-                    // ->mergeBindings($subQueryFavorites)
                     ->orderBy('postTweets.created_at', 'decs')
                     ->paginate(20);
 
@@ -59,7 +52,6 @@ class TimeLineController extends Controller
 
       //ログインユーザーの情報をリストへ格納
       $userInfoAry = array();
-      // $userInfoAry[$userInfo->id]['profileText'] = $userInfo->profile;
       $userInfoAry[$userInfo->id]['userTweetCnt'] = $userTweetCnt;
       $userInfoAry[$userInfo->id]['followedCnt'] = $followedCnt;
       $userInfoAry[$userInfo->id]['followerCnt'] = $followerCnt;

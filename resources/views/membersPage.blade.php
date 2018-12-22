@@ -7,7 +7,6 @@
 			<aside class="userProfile col-md-3.5">
 					@include('layouts.userProfile')
 			</aside>
-			<!-- <div class="row justify-content-center"> -->
 
 			<!-- 登録ユーザー一覧を表示 -->
 			<section class="main-content col-xs-12 col-sm-12 col-md-8">
