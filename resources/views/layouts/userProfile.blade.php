@@ -12,12 +12,12 @@
     </div>
     @isset ($userInfoAry[$userInfo->id]['profileText'])
     <!-- プロフィールページでのみ表示する -->
-      <div class="profile-middle">
+      <!-- <div class="profile-middle">
         <div class="middle-element">
             <p>自己紹介</p>
             {{$userInfoAry[$userInfo->id]['profileText']}}
         </div>
-      </div>
+      </div> -->
     @endisset
     <div class="profile-lower">
       <div class="lower-element">
