@@ -49,21 +49,6 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="profileText" class="col-md-4 col-form-label text-md-right">{{ __('Profile') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="profileText" type="textarea" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ $userInfo->name }}" required autofocus>
-                            <textarea class ="" name=""  
-                          value="{{ $userInfo->name }}" required autofocus></textarea>
-                            @if ($errors->has('name'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
                         <label for="icon" class="col-md-4 col-form-label text-md-right">{{ __('icon') }}</label>
 
                         <div class="col-md-6">

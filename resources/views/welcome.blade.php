@@ -15,8 +15,6 @@
 			</ul>
 	</div>
 <footer class="welcomeFooter">
-	<a href="https://twitter.com/FFuuman"><img src="https://s3-ap-northeast-1.amazonaws.com/ffmn-twitlite/parts/twitterIcon.png"
-		width="50px" height="50px"></a>
 	<a href="https://github.com/KbysFFuuma/twitLite"><img src="https://s3-ap-northeast-1.amazonaws.com/ffmn-twitlite/parts/GitHub-Mark-64px.png"
 		width="50px" height="50px"></a>
 </footer>
