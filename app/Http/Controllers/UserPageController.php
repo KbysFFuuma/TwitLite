@@ -78,6 +78,7 @@ class UserPageController extends Controller
         /*-------------------------------------*/
         /*ログインユーザーがいいね済みか確認      */
         /*-------------------------------------*/
+        $favoriteInfoAry = array();
         foreach ($userTweets as $row) {
 
           //いいねしているか確認(true==1)
@@ -163,7 +164,6 @@ class UserPageController extends Controller
         /*---------------------------------*/
         /*フォロー一覧のユーザー情報を取得    */
         /*---------------------------------*/
-
         foreach ($followUsers as $row) {
 
           //フォローしているか確認(true==1)
@@ -359,7 +359,7 @@ class UserPageController extends Controller
         $url = Storage::disk('s3')->url($userInfo->icon);
         $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
-
+        $favoriteInfoAry = array();
         foreach ($favariteTweets as $row) {
 
           /*-------------------------------------*/

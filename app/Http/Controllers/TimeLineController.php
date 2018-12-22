@@ -67,6 +67,7 @@ class TimeLineController extends Controller
       $url = Storage::disk('s3')->url($userInfo->icon);
       $userInfoAry[$userInfo->id]['userIcon'] = $url;
 
+      $userInfoAry = array();
       foreach ($userTweets as $row) {
 
         /*-------------------------------------*/
